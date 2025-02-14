@@ -10,7 +10,7 @@ test('User cannot place a bet without logging in', async ({ page }) => {
     await homePage.clickPlaceBet();
     await homePage.waitForAuthModal();
 
-    await expect(homePage.authModal).toBeVisible();
+    await expect(homePage.authModal, "Auth modal should appear when placing a bet while logged out.").toBeVisible();
 });
 
 test('User can search and see results', async ({ page }) => {
