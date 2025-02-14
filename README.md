@@ -45,9 +45,11 @@ You can run the Playwright tests locally with the following command:
 npx playwright test
 ```
 
-### **Running with CI/CD**
+Or, if you want to run with Allure reporting:
 
-This project uses **GitHub Actions** for CI/CD. Every push or pull request to the `main` branch will trigger the Playwright tests. You can check the results in the **"Actions" tab** on GitHub.
+```bash
+npm run test:allure
+```
 
 ### **Test Reports**
 
@@ -58,6 +60,23 @@ npx playwright show-report
 ```
 
 The reports will be available in the `playwright-report` folder.
+
+Allure reports will be generated as well, but if run wasn't done using **test:allure** configuration, you will need to generate reports manually:
+
+```bash
+npx allure generate allure-results
+```
+
+And then run report view:
+
+```bash
+npx allure open
+```
+
+### **Running with CI/CD**
+
+This project uses **GitHub Actions** for CI/CD. Every push or pull request to the `main` branch will trigger the Playwright tests. You can check the results in the **"Actions" tab** on GitHub.
+
 
 ## GitHub Actions
 
